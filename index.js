@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use("/api/users", userRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/products", productRoutes);
-app.use("/api/upload", uploadRoutes);
+app.use("/api/frontend/upload", uploadRoutes);
 app.use("/api/orders", orderRoutes);
 
 
@@ -37,7 +37,7 @@ app.get("/api/config/paypal", (req, res) => {
 
   
 const __dirname = path.resolve();
-app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
+app.use("/frontend/uploads", express.static(path.join(__dirname + "/frontend/uploads")));
 
 app.listen(port, () => console.log(`Server running on port: ${port}`));
 
