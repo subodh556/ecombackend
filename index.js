@@ -18,13 +18,7 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
-const cors = require('cors');
-
-app.use(cors({
-  origin:["https://shooperssite.vercel.app"],
-  methods:["POST","GET","PUT","DELETE"],
-  credentials:true
-}))
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
